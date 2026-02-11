@@ -27,7 +27,15 @@ async fn main() {
     dotenv().ok();
     
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
-    let pool = SqlitePool::connect(&database_url).await.expect("Failed to connect to DB");
+    
+    use sqlx::sqlite::SqliteConnectOptions;
+    use std::str::FromStr;
+
+    let options = SqliteConnectOptions::from_str(&database_url)
+        .expect("Invalid DATABASE_URL")
+        .create_if_missing(true);
+
+    let pool = SqlitePool::connect_with(options).await.expect("Failed to connect to DB");
     
     sqlx::migrate!("./migrations")
         .run(&pool)
@@ -68,7 +76,8 @@ async fn main() {
         .layer(CorsLayer::permissive())
         .with_state(state);
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+    // Use 0.0.0.0 to expose the server outside the Docker container
+    let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
     println!("🚀 Server listening on http://{}", addr);
     println!("📄 Swagger UI available at http://{}/swagger-ui", addr);
     
