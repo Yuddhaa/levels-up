@@ -15,7 +15,12 @@ export const Register: React.FC = () => {
         email: '',
         password: '',
         confirmPassword: '',
-        name: ''
+        name: '',
+        currentWeight: '',
+        targetWeight: '',
+        height: '',
+        age: '',
+        gender: 'Male'
     });
     const [loading, setLoading] = useState(false);
 
@@ -36,7 +41,12 @@ export const Register: React.FC = () => {
                 username: formData.username,
                 email: formData.email,
                 password: formData.password,
-                name: formData.name
+                name: formData.name,
+                currentWeight: Number(formData.currentWeight),
+                targetWeight: Number(formData.targetWeight),
+                height: Number(formData.height),
+                age: Number(formData.age),
+                gender: formData.gender
             });
             login(res.token, res.user);
             showToast('Welcome to Level Up!', 'success');
@@ -84,6 +94,39 @@ export const Register: React.FC = () => {
                         <label style={labelStyle}>Email</label>
                         <input name="email" type="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
                     </div>
+
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                        <div>
+                            <label style={labelStyle}>Current Weight (kg)</label>
+                            <input name="currentWeight" type="number" value={formData.currentWeight} onChange={handleChange} required style={inputStyle} />
+                        </div>
+                        <div>
+                            <label style={labelStyle}>Goal Weight (kg)</label>
+                            <input name="targetWeight" type="number" value={formData.targetWeight} onChange={handleChange} required style={inputStyle} />
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                        <div>
+                            <label style={labelStyle}>Height (cm)</label>
+                            <input name="height" type="number" value={formData.height} onChange={handleChange} required style={inputStyle} />
+                        </div>
+                        <div>
+                            <label style={labelStyle}>Age</label>
+                            <input name="age" type="number" value={formData.age} onChange={handleChange} required style={inputStyle} />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label style={labelStyle}>Gender</label>
+                        <select name="gender" value={formData.gender} onChange={(e: any) => handleChange(e)} style={inputStyle}>
+                            <option value="Male" style={{ color: 'black' }}>Male</option>
+                            <option value="Female" style={{ color: 'black' }}>Female</option>
+                            <option value="Other" style={{ color: 'black' }}>Other</option>
+                        </select>
+                    </div>
+
                     <div>
                         <label style={labelStyle}>Password</label>
                         <input name="password" type="password" value={formData.password} onChange={handleChange} required style={inputStyle} />
@@ -107,6 +150,6 @@ export const Register: React.FC = () => {
                     Already have an account? <Link to="/login" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>Sign In</Link>
                 </div>
             </motion.div>
-        </div>
+        </div >
     );
 };

@@ -12,6 +12,11 @@ pub struct RegisterRequest {
     pub email: String,
     pub password: String,
     pub name: String,
+    pub current_weight: f64,
+    pub target_weight: f64,
+    pub height: f64,
+    pub age: i64,
+    pub gender: String,
 }
 
 #[derive(Deserialize, ToSchema)]

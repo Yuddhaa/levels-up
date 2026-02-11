@@ -65,11 +65,19 @@ pub async fn register(
     // 3. Insert user
     let user_id = sqlx::query!(
         r#"
-        INSERT INTO users (username, email, password_hash, name)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO users (username, email, password_hash, name, current_weight, target_weight, height, age, gender)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING id
         "#,
-        payload.username, payload.email, password_hash, payload.name
+        payload.username, 
+        payload.email, 
+        password_hash, 
+        payload.name,
+        payload.current_weight,
+        payload.target_weight,
+        payload.height,
+        payload.age,
+        payload.gender
     )
     .fetch_one(&state.pool)
     .await
