@@ -47,7 +47,7 @@ export const Routine: React.FC = () => {
 
         // Award XP if checking
         if (!dailyLog.completedItemIds.includes(itemId)) {
-            const res = await api.awardXP({ amount: 5, reason: 'Routine Item Completed' });
+            const res = await api.awardXP(5, 'Routine Item Completed');
             if (res && res.status === 'success') {
                 setXpData({
                     xp: res.xpGained,

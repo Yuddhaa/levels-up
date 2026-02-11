@@ -37,7 +37,7 @@ export const Discipline: React.FC = () => {
 
         // Award XP if checking (not unchecking)
         if (!todayLogs.includes(habitId)) {
-            const res = await api.awardXP({ amount: 15, reason: 'Discipline Habit Completed' });
+            const res = await api.awardXP(15, 'Discipline Habit Completed');
             if (res && res.status === 'success') {
                 setXpData({
                     xp: res.xpGained,
