@@ -153,7 +153,7 @@ pub async fn get_dashboard_stats(
         bmi_category: bmi_category.to_string(),
         bmr: bmr.round(),
         tdee: tdee.round(),
-        total_lost: (total_change * 10.0).round() / 10.0, // This is now total change (abs)
+        total_lost: ((profile.start_weight - profile.current_weight) * 10.0).round() / 10.0,
         goal_progress: goal_progress.clamp(0.0, 100.0),
         xp_to_next_level: xp_to_next_level as u32,
         xp_progress: xp_progress.clamp(0.0, 100.0),
