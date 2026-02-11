@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        INSERT INTO weight_logs (user_id, weight, note, photo_url)\n        VALUES ($1, $2, $3, $4)\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 4
+    },
+    "nullable": []
+  },
+  "hash": "3633a5405f85eb736066d66a34c7fdc66da8a6e27656c9d2a8cdcf5517e4d8de"
+}

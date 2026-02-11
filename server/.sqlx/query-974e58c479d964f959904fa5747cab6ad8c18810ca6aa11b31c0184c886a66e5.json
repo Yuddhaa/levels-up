@@ -1,0 +1,68 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT \n            id, \n            name, \n            calories as \"calories!\", \n            protein as \"protein!\", \n            carbs as \"carbs!\", \n            fat as \"fat!\", \n            serving_unit as \"serving_unit!\", \n            serving_size as \"serving_size!\", \n            created_at\n        FROM food_items\n        WHERE id = $1\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "name",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "calories!",
+        "ordinal": 2,
+        "type_info": "Int64"
+      },
+      {
+        "name": "protein!",
+        "ordinal": 3,
+        "type_info": "Float"
+      },
+      {
+        "name": "carbs!",
+        "ordinal": 4,
+        "type_info": "Float"
+      },
+      {
+        "name": "fat!",
+        "ordinal": 5,
+        "type_info": "Float"
+      },
+      {
+        "name": "serving_unit!",
+        "ordinal": 6,
+        "type_info": "Text"
+      },
+      {
+        "name": "serving_size!",
+        "ordinal": 7,
+        "type_info": "Float"
+      },
+      {
+        "name": "created_at",
+        "ordinal": 8,
+        "type_info": "Datetime"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "974e58c479d964f959904fa5747cab6ad8c18810ca6aa11b31c0184c886a66e5"
+}

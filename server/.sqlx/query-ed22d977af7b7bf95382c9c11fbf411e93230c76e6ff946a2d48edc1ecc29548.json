@@ -1,0 +1,50 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT id, user_id, weight, date, note, photo_url\n        FROM weight_logs\n        WHERE user_id = $1\n        ORDER BY date DESC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "user_id",
+        "ordinal": 1,
+        "type_info": "Int64"
+      },
+      {
+        "name": "weight",
+        "ordinal": 2,
+        "type_info": "Float"
+      },
+      {
+        "name": "date",
+        "ordinal": 3,
+        "type_info": "Datetime"
+      },
+      {
+        "name": "note",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "photo_url",
+        "ordinal": 5,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "ed22d977af7b7bf95382c9c11fbf411e93230c76e6ff946a2d48edc1ecc29548"
+}

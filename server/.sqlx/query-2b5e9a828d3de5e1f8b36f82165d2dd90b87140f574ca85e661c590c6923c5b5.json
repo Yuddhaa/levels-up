@@ -1,0 +1,26 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT start_weight as \"start_weight!\", target_weight as \"target_weight!\" FROM users WHERE id = $1",
+  "describe": {
+    "columns": [
+      {
+        "name": "start_weight!",
+        "ordinal": 0,
+        "type_info": "Float"
+      },
+      {
+        "name": "target_weight!",
+        "ordinal": 1,
+        "type_info": "Float"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      true,
+      true
+    ]
+  },
+  "hash": "2b5e9a828d3de5e1f8b36f82165d2dd90b87140f574ca85e661c590c6923c5b5"
+}

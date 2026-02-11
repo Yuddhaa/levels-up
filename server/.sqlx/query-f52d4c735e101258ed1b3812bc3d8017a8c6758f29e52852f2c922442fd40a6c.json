@@ -1,0 +1,68 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT \n            f.id, \n            f.name, \n            f.calories as \"calories!\", \n            f.protein as \"protein!\", \n            f.carbs as \"carbs!\", \n            f.fat as \"fat!\", \n            f.serving_unit as \"serving_unit!\", \n            f.serving_size as \"serving_size!\", \n            f.created_at\n        FROM food_items f\n        JOIN favorite_foods fav ON f.id = fav.food_item_id\n        WHERE fav.user_id = $1\n        ORDER BY f.name ASC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "name",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "calories!",
+        "ordinal": 2,
+        "type_info": "Int64"
+      },
+      {
+        "name": "protein!",
+        "ordinal": 3,
+        "type_info": "Float"
+      },
+      {
+        "name": "carbs!",
+        "ordinal": 4,
+        "type_info": "Float"
+      },
+      {
+        "name": "fat!",
+        "ordinal": 5,
+        "type_info": "Float"
+      },
+      {
+        "name": "serving_unit!",
+        "ordinal": 6,
+        "type_info": "Text"
+      },
+      {
+        "name": "serving_size!",
+        "ordinal": 7,
+        "type_info": "Float"
+      },
+      {
+        "name": "created_at",
+        "ordinal": 8,
+        "type_info": "Datetime"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "f52d4c735e101258ed1b3812bc3d8017a8c6758f29e52852f2c922442fd40a6c"
+}

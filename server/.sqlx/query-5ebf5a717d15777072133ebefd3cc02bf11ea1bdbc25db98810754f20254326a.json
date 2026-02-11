@@ -1,0 +1,26 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT level, aura FROM users WHERE id = $1",
+  "describe": {
+    "columns": [
+      {
+        "name": "level",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "aura",
+        "ordinal": 1,
+        "type_info": "Int64"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      true,
+      true
+    ]
+  },
+  "hash": "5ebf5a717d15777072133ebefd3cc02bf11ea1bdbc25db98810754f20254326a"
+}

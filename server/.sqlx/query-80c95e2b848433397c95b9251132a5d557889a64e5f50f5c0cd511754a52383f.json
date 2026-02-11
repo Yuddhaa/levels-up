@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT INTO water_logs (user_id, date, amount_ml) VALUES ($1, $2, $3)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": []
+  },
+  "hash": "80c95e2b848433397c95b9251132a5d557889a64e5f50f5c0cd511754a52383f"
+}

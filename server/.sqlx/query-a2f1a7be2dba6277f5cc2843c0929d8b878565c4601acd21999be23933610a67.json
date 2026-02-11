@@ -1,0 +1,74 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT \n            id as \"id!\", \n            name as \"name!\", \n            current_weight as \"current_weight!\", \n            start_weight as \"start_weight!\", \n            target_weight as \"target_weight!\", \n            height as \"height!\", \n            age as \"age!\", \n            gender as \"gender!\", \n            level as \"level?\", \n            aura as \"aura?\"\n        FROM users WHERE id = $1\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id!",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "name!",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "current_weight!",
+        "ordinal": 2,
+        "type_info": "Float"
+      },
+      {
+        "name": "start_weight!",
+        "ordinal": 3,
+        "type_info": "Float"
+      },
+      {
+        "name": "target_weight!",
+        "ordinal": 4,
+        "type_info": "Float"
+      },
+      {
+        "name": "height!",
+        "ordinal": 5,
+        "type_info": "Float"
+      },
+      {
+        "name": "age!",
+        "ordinal": 6,
+        "type_info": "Int64"
+      },
+      {
+        "name": "gender!",
+        "ordinal": 7,
+        "type_info": "Text"
+      },
+      {
+        "name": "level?",
+        "ordinal": 8,
+        "type_info": "Int64"
+      },
+      {
+        "name": "aura?",
+        "ordinal": 9,
+        "type_info": "Int64"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "a2f1a7be2dba6277f5cc2843c0929d8b878565c4601acd21999be23933610a67"
+}

@@ -12,6 +12,8 @@ RUN rm -rf src
 
 # Copy actual source code
 COPY . .
+# Enable SQLx offline mode
+ENV SQLX_OFFLINE=true
 # Touch main.rs to trigger rebuild
 RUN touch src/main.rs
 RUN cargo build --release

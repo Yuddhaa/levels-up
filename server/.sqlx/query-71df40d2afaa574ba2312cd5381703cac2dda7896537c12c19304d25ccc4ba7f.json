@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        UPDATE meal_logs \n        SET date = $1, meal_type = $2, food_item_id = $3, food_name = $4, calories = $5, protein = $6, carbs = $7, fat = $8, servings = $9\n        WHERE id = $10 AND user_id = $11\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 11
+    },
+    "nullable": []
+  },
+  "hash": "71df40d2afaa574ba2312cd5381703cac2dda7896537c12c19304d25ccc4ba7f"
+}

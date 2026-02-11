@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        UPDATE users SET\n            name = $1,\n            current_weight = $2,\n            start_weight = $3,\n            target_weight = $4,\n            height = $5,\n            age = $6,\n            gender = $7,\n            level = $8,\n            aura = $9,\n            updated_at = CURRENT_TIMESTAMP\n        WHERE id = $10\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 10
+    },
+    "nullable": []
+  },
+  "hash": "53019ef1c7e70b80b07f359a4254f7e527e94a192871c4c189872a2368f27450"
+}

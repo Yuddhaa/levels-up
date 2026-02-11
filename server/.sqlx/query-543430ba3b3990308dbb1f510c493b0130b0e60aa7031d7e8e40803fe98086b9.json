@@ -1,0 +1,74 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT \n            id, \n            cast(date as text) as date, \n            meal_type, \n            food_item_id,\n            food_name, \n            calories as \"calories!\", \n            protein as \"protein!\", \n            carbs as \"carbs!\", \n            fat as \"fat!\", \n            servings as \"servings!\"\n        FROM meal_logs\n        WHERE user_id = $1 AND date = $2\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "date",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "meal_type",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "food_item_id",
+        "ordinal": 3,
+        "type_info": "Int64"
+      },
+      {
+        "name": "food_name",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "calories!",
+        "ordinal": 5,
+        "type_info": "Int64"
+      },
+      {
+        "name": "protein!",
+        "ordinal": 6,
+        "type_info": "Float"
+      },
+      {
+        "name": "carbs!",
+        "ordinal": 7,
+        "type_info": "Float"
+      },
+      {
+        "name": "fat!",
+        "ordinal": 8,
+        "type_info": "Float"
+      },
+      {
+        "name": "servings!",
+        "ordinal": 9,
+        "type_info": "Float"
+      }
+    ],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "543430ba3b3990308dbb1f510c493b0130b0e60aa7031d7e8e40803fe98086b9"
+}
