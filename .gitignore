@@ -1,0 +1,20 @@
+# General
+.DS_Store
+.idea
+.vscode
+*.log
+
+# Server (Rust)
+/server/target
+/server/**/*.db
+/server/**/*.db-shm
+/server/**/*.db-wal
+/server/.env
+
+# Client (Node)
+/client/node_modules
+/client/dist
+/client/.env
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
