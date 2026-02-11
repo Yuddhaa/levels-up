@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Ruler, Weight, Calendar, LogOut, Activity, Edit2, Save, X, Check } from 'lucide-react';
+import { User, Ruler, Weight, Calendar, LogOut, Activity, Edit2, Check } from 'lucide-react';
 import { api } from '../lib/api';
 import { useToast } from '../components/Toast';
 
